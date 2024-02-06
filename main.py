@@ -23,7 +23,7 @@ class Phone(Field):
 
     @property
     def value(self):
-        return self._value
+        return self.__value
 
     @value.setter
     def value(self, new_value: str):
@@ -31,7 +31,7 @@ class Phone(Field):
             raise ValueError("Phone number should be 10 digits long.")
         if not new_value.isdigit():
             raise ValueError("Phone number should only include digits.")
-        self._value = new_value
+        self.__value = new_value
 
 
 class Birthday(Field):
