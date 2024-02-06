@@ -41,13 +41,13 @@ class Birthday(Field):
 
     @property
     def birthday(self):
-        return self._value
+        return self.__value
 
     @birthday.setter
     def birthday(self, new_value) -> datetime:
         if new_value:
             try:
-                self._value = date.fromisoformat(new_value)
+                self.__value = date.fromisoformat(new_value)
             except ValueError:
                 raise ValueError("Invalid birthday format. Use YYYY-MM-DD.")
 
